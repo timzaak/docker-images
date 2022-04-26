@@ -27,6 +27,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
+          allow: security.insecure
           tags: ${{github.event.inputs.tag}}
           file: ${{github.event.inputs.docker_file}}
 
