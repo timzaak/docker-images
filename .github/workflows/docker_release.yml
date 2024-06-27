@@ -28,7 +28,7 @@ jobs:
         with:
           push: true
           allow: security.insecure
-          tags: ${{secrets.DOCKER_REGISTRY}}/${{github.event.inputs.tag}}
+          tags: "${{secrets.DOCKER_REGISTRY}}/${{github.event.inputs.tag}}"
           file: ${{github.event.inputs.docker_file}}
 
 
