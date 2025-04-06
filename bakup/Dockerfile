@@ -14,9 +14,12 @@ FROM alpine:3
 ENV TZ="Asia/Shanghai"
 
 COPY --from=build /ossutil /usr/local/bin/ossutil
-#RUN apk update
-RUN apk add --update --no-cache \
-    mysql-client tzdata rsync postgresql-client curl gzip
 
+RUN apk add --update --no-cache \
+    mysql-client postgresql-client \
+    curl gzip openssh-client \
+    tzdata rsync \
+    ca-certificates \
+    sshpass
 
 ENTRYPOINT ["crond", "-f"]
