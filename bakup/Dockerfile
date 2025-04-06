@@ -7,7 +7,7 @@ RUN apk add --update --no-cache curl git && \
     cd ossutil-${OSSUTIL_VERSION} && \
     go get && \
     go build && \
-    cp ossutil-${OSSUTIL_VERSION} / 
+    cp /go/src/aliyun/ossutil-${OSSUTIL_VERSION}/ossutil-${OSSUTIL_VERSION} / 
 
 FROM alpine:3
 
