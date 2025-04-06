@@ -1,8 +1,8 @@
-FROM golang:1.15.0-alpine3.12 as build
+FROM golang:1.24.2-alpine as build
 ENV OSSUTIL_VERSION 1.7.19
 WORKDIR /go/src/aliyun 
-RUN apk add --no-cache curl git && \
-    curl -Lo /go/src/aliyun/ossutil.zip https://github.com/aliyun/ossutil/archive/${OSSUTIL_VERSION}.zip && \
+RUN apk add --update --no-cache curl git && \
+    curl -Lo /go/src/aliyun/ossutil.zip https://github.com/aliyun/ossutil/archive/refs/tags/v${OSSUTIL_VERSION}.zip && \
     unzip /go/src/aliyun/ossutil.zip && \
     cd ossutil-${OSSUTIL_VERSION} && \
     go get && \

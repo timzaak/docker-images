@@ -1,4 +1,4 @@
-name: docker release
+name: docker transfer
 # Docker registry is defined by secrets
 on:
   workflow_dispatch:

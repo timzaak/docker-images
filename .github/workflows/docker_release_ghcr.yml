@@ -1,4 +1,4 @@
-name: backend server build
+name: docker release ghcr
 on:
   workflow_dispatch:
     inputs:
@@ -7,7 +7,7 @@ on:
         description: DockerFile Dir
       tag:
         required: true
-        description: "docker version to release"
+        description: "${dockername}:${tag} to release"
     
 env:
   REGISTRY: ghcr.io
