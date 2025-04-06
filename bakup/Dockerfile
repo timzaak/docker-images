@@ -7,13 +7,13 @@ RUN apk add --update --no-cache curl git && \
     cd ossutil-${OSSUTIL_VERSION} && \
     go get && \
     go build && \
-    cp /go/src/aliyun/ossutil-${OSSUTIL_VERSION}/ossutil-${OSSUTIL_VERSION} / 
+    cp /go/src/aliyun/ossutil-${OSSUTIL_VERSION}/ossutil /
 
 FROM alpine:3
 
 ENV TZ="Asia/Shanghai"
 
-COPY --from=build /ossutil-${OSSUTIL_VERSION} /usr/local/bin/ossutil
+COPY --from=build /ossutil /usr/local/bin/ossutil
 #RUN apk update
 RUN apk add --update --no-cache \
     mysql-client tzdata rsync postgresql-client curl gzip
