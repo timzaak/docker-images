@@ -1,9 +1,5 @@
 # docker-images
 主要是因为网络原因才诞生次项目。
-### Feature
-
-1. 基于 Github Action 构建 docker image
-2. 基于 Github Action 迁移 docker Image
 
 ## 现有Docker
 ### ElsatciSearch
@@ -13,7 +9,7 @@ elasticsearch: 7.17.2, 补充了 IK、ANSJ 插件，USER 切换成 ROOT，ANSJ �
 ```sh
 docker run -v -d crontab_config_file:/etc/crontab -v oss_config_file:~/.ossutilconfig -v /tmp:/back bakup:1.0
 ```
-备份脚本exmample:
+备份脚本example:
 ```sh
 #!/bin/sh
 
